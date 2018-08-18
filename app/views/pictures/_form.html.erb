@@ -1,38 +1,37 @@
 <%= form_with(model: @picture , local: true, :html => {multipart: true} ,url: choose_new_or_edit ) do |form| %>
 <% if @picture.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(@picture.errors.count, "個エラーがあります,") %>保存されていません。</h2>
+  <div id="error_explanation">
+    <h2><%= pluralize(@picture.errors.count, "個エラーがあります,") %>保存されていません。</h2>
 
-  <ul>
-    <% @picture.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-</div>
+    <ul>
+      <% @picture.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
-  <div class="field form-group">
-    <%= form.label :"タイトル" %>
-    <%= form.text_field :title,id: :picture_title,class: "form-control" %>
-
-  </div>
-
-  <div class="field form-group">
-    <%= form.label :"買った時のエピソード" %><br>
-    <%= form.text_area :content, id: :picture_blog_content ,size: "40x4",class: "form-control" %>
-  </div>
-  <div class="field form-group">
-    <%= form.label :search_word,'サーチ用ワード' %><br>
-    <%= form.text_field :search_word, id: :picture_search_word ,class: "form-control" %>
-  </div>
-  <div class="field form-group">
-    <%= form.hidden_field :custom_image, id: :custom_image %>
-  </div>
-  <div class="field form-group">
-    <%= form.label :image %>
-    <%= form.file_field :image,id: :picture_image ,class: "form-control" %>
-    <%= form.hidden_field :image_cache %>
-  </div>
-  <div class="field form-group">
-  <%= form.submit  class: "btn btn-primary" %><%= link_to '戻る', pictures_path,class: "btn btn-primary" %>
+<div class="field form-group">
+  <p><%= form.label :"タイトル" %></p>
+  <p><%= form.text_field :title,id: :picture_title,class: "form-control" %></p>
+</div>
+<div class="field form-group">
+  <p><%= form.label :"買った時のエピソード" %></p>
+  <p><%= form.text_area :content, id: :picture_blog_content ,size: "40x4",class: "form-control" %></p>
+</div>
+<div class="field form-group">
+  <p><%= form.label :search_word,'サーチ用ワード' %></p>
+  <p>複数登録の時はスペース区切り</p>
+  <p><%= form.text_field :search_word, id: :picture_search_word ,class: "form-control" %></p>
+</div>
+<div class="field form-group">
+  <%= form.hidden_field :custom_image, id: :custom_image %>
+</div>
+<div class="field form-group">
+  <p><%= form.label :image %></p>
+  <p><%= form.file_field :image,id: :picture_image ,class: "form-control" %></p>
+  <%= form.hidden_field :image_cache %>
+</div>
+<div class="field form-group">
+  <p><%= form.submit class: "btn btn-primary" %><%= link_to '戻る', pictures_path,class: "btn btn-primary" %></p>
 </div>
 <% end %>
