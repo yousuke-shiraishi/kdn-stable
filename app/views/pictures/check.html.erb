@@ -14,7 +14,7 @@
     </div>
     <div class="field form-group">
       <%= form.hidden_field :image ,id: :picture_image %>
-      <%= hidden_field_tag :"cache[image]", @picture.image.file.filename.cache_name %>
+      <%= hidden_field_tag :"cache[image]", @picture.image_cache_name %>
     </div>
     <div class="field form-group">
       <%= form.hidden_field :search_word ,id: :search_word %>
