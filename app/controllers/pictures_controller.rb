@@ -65,7 +65,7 @@ class PicturesController < ApplicationController
 
   def check
     @picture = current_user.pictures.build(picture_params)
-    gon.picture = @picture.image.file.filename_cache
+    gon.picture = @picture.image_cache
     render :new if @picture.invalid?
   end
 
