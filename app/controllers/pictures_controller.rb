@@ -38,8 +38,9 @@ class PicturesController < ApplicationController
 
   def create
     @picture = Picture.new(exchange_params)
+    #@picture.image.retrieve_from_cache! params[:cache][:image]
     @picture.user_id = current_user.id
-    PicturetoMailer.pictureto_mail(@picture.user).deliver
+#    PicturetoMailer.pictureto_mail(@picture.user).deliver
       if @picture.save
         redirect_to @picture, notice: 'Picture was successfully created.'
       else
@@ -64,7 +65,8 @@ class PicturesController < ApplicationController
 
   def check
     @picture = current_user.pictures.build(picture_params)
-    gon.picture = @picture.image.url
+    gon.picture = @picture.image_cache
+
     render :new if @picture.invalid?
   end
 
@@ -79,7 +81,7 @@ class PicturesController < ApplicationController
   end
 
   def picture_params
-    params.require(:picture).permit(:title, :user_id, :content, :image, :custom_image, :search_word, :q)
+    params.require(:picture).permit(:title, :user_id, :content, :image, :custom_image, :search_word, :q, :image_cache)
   end
 
   def exchange_params
