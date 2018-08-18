@@ -16,7 +16,7 @@
           <span class="keyword_box">これは検索用のキーワード</span>
           <p class="btn btn-info"><%= picture.search_word %></p>
         <% end %><br><br>
-        <p><%= cl_image_tag picture.user.image.file.filename,width:30,height:30,class:'img-circle' %></p>
+        <p><%= image_tag picture.user.image_url,width:30,height:30,class:'img-circle' %></p>
         <p><%= picture.created_at %></p>
       </div>
 
