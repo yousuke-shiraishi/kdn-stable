@@ -33,12 +33,12 @@ class PicturesController < ApplicationController
 
   # GET /pictures/1/edit
   def edit
-    gon.picture = @picture.image.url
+    gon.picture = @picture.image.file.filename.url
   end
 
   def create
     @picture = Picture.new(exchange_params)
-    #@picture.image.retrieve_from_cache! params[:cache][:image]
+    #@picture.image.file.filename.retrieve_from_cache! params[:cache][:image]
     @picture.user_id = current_user.id
 #    PicturetoMailer.pictureto_mail(@picture.user).deliver
       if @picture.save
@@ -65,7 +65,7 @@ class PicturesController < ApplicationController
 
   def check
     @picture = current_user.pictures.build(picture_params)
-    gon.picture = @picture.image_cache
+    gon.picture = @picture.image.file.filename_cache
     render :new if @picture.invalid?
   end
 

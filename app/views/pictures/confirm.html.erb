@@ -3,7 +3,7 @@
   <%= link_to '戻る', pictures_path %>
   <% @favorites_pictures.each do |picture| %>
     <div class="wrapper">
-      <p><%= image_tag picture.image_url ,size:'300x200'%></p>
+      <p><%= cl_image_tag picture.file.filename ,size:'300x200'%></p>
       <p><%= picture.title %></p>
       <p><%= picture.content %></p>
       <span><%= picture.user.name %></span>

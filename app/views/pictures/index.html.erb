@@ -6,7 +6,7 @@
   <% @pictures.each do |picture| %>
     <div class="box">
       <div class="content_show">
-        <p><%= image_tag picture.image_url ,:size => "300x420",class:'img center-block' %></p>
+        <p><%= cl_image_tag picture.file.filename ,:size => "300x420",class:'img center-block' %></p>
         <span>タイトル</span>
         <p><%= picture.title %></p>
         <span>メッセージ</span>
@@ -15,7 +15,7 @@
           <span class="keyword_box">これは検索用のキーワード</span>
           <p class="btn btn-info"><%= picture.search_word %></p>
         <% end %><br><br>
-        <p><%= image_tag picture.user.image_url,width:30,height:30,class:'img-circle' %></p>
+        <p><%= cl_image_tag picture.user.file.filename,width:30,height:30,class:'img-circle' %></p>
         <p><%= picture.created_at %></p>
       </div>
 

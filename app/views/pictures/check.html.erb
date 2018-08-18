@@ -14,7 +14,7 @@
     </div>
     <div class="field form-group">
       <%= form.hidden_field :image ,id: :picture_image %>
-      <%= hidden_field_tag :"cache[image]", @picture.image.cache_name %>
+      <%= hidden_field_tag :"cache[image]", @picture.image.file.filename.cache_name %>
     </div>
     <div class="field form-group">
       <%= form.hidden_field :search_word ,id: :search_word %>
@@ -23,7 +23,7 @@
       <%= form.hidden_field :custom_image ,id: :custom_image %>
     </div>
     <p>
-      <%#= image_tag @picture.image %>
+      <%#= cl_image_tag @picture.image.file.filename %>
       </p>
       <p>タイトル:<%= @picture.title %></p>
       <p>コンテンツ:<%= @picture.content %></p>

@@ -3,7 +3,7 @@
     <strong>レシート内容</strong>
   </p>
   <p>
-    <%= image_tag @picture.image_url ,:size => "300x420" %></p>
+    <%= cl_image_tag @picture.image.file.filename_url ,:size => "300x420" %></p>
   <p><%= @picture.title %></p>
   <p><%= @picture.content %></p>
   <% if @picture.user == current_user %>
