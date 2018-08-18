@@ -33,7 +33,7 @@ class PicturesController < ApplicationController
 
   # GET /pictures/1/edit
   def edit
-    gon.picture = @picture.image.file.filename.url
+    gon.picture = @picture.image.url
   end
 
   def create
