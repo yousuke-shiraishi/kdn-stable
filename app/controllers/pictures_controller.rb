@@ -33,14 +33,18 @@ class PicturesController < ApplicationController
 
   # GET /pictures/1/edit
   def edit
-    gon.picture = @picture.image.file.filename
+    gon.picture = @picture.image.url
   end
 
   def create
     @picture = Picture.new(exchange_params)
     #@picture.image.file.filename.retrieve_from_cache! params[:cache][:image]
     @picture.user_id = current_user.id
-#    PicturetoMailer.pictureto_mail(@picture.user).deliver
+  #  binding.pry
+  if @picture.custom_image.blank?
+      @picture.image.retrieve_from_cache! params[:cache][:image]
+  end
+    #@picture.image = Cloudinary::Uploader.upload(File.basename(exchange_params[:image]))
       if @picture.save
         redirect_to @picture, notice: 'Picture was successfully created.'
       else
@@ -66,6 +70,8 @@ class PicturesController < ApplicationController
   def check
     @picture = current_user.pictures.build(picture_params)
     gon.picture = @picture.image_cache
+    #binding.pry
+
     render :new if @picture.invalid?
   end
 
