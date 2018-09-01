@@ -1,4 +1,4 @@
-<div class="col-xs-12 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
+
 <h1 class="text-center">家電を買い叩け</h1>
 <div id="new-picture-link">
   <%= link_to '新規ブログを作成する', new_picture_path %>
@@ -32,7 +32,7 @@
     </div>
   <% end %>
 </div>
-
+<div class="col-xs-12 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
   <div>
     <%= search_form_for(@keyword, :url => search_pictures_path, html: { method: :post }) do |f| %>
     <%= f.label :search_word_cont_any %><br>
