@@ -1,4 +1,5 @@
 <h1>お気に入り一覧</h1>
+<div class="row">
 <div class="col-xs-12 col-md-offset-4 col-md-4 col-lg-offset-4 col-lg-4">
   <%= link_to '戻る', pictures_path %>
   <% @favorites_pictures.each do |picture| %>
@@ -11,4 +12,5 @@
       <span><<%= picture.updated_at %></span>
     </div>
   <% end %>
+</div>
 </div>

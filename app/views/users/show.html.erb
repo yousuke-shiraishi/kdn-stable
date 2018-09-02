@@ -1,3 +1,4 @@
+<div class="row">
 <div class="col-xs-12 col-md-offset-4 col-md-4 col-lg-offset-4 col-lg-4">
   <div>
     <%if @user.id == session[:user_id] then %>
@@ -9,4 +10,5 @@
       <p><%= link_to "トップページへ移動",pictures_url, class:'btn btn-default'%></p>
     <%end%>
   </div>
+</div>
 </div>
