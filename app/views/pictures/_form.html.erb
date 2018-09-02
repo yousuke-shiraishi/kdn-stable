@@ -15,8 +15,13 @@
   <p><%= form.text_field :title,id: :picture_title,class: "form-control" %></p>
 </div>
 <div class="field form-group">
-  <p><%= form.label :"買った時のエピソード" %></p>
+  <p><%= form.label :"買うためのノウハウ" %></p>
   <p><%= form.text_area :content, id: :picture_blog_content ,size: "40x4",class: "form-control" %></p>
+</div>
+<div class="field form-group">
+  <p><%= form.label :"買った時の金額" %></p>
+  <p><%= form.text_field :price, id: :picture_price ,class: "form-control" %><span>円</span>
+  </p>
 </div>
 <div class="field form-group">
   <p><%= form.label :search_word,'サーチ用ワード' %></p>

@@ -13,6 +13,9 @@
       <%= form.hidden_field :content %>
     </div>
     <div class="field form-group">
+      <%= form.hidden_field :price %>
+    </div>
+    <div class="field form-group">
       <%= form.hidden_field :image ,id: :picture_image %>
       <%= hidden_field_tag :"cache[image]", @picture.image.cache_name %>
     </div>
@@ -27,6 +30,7 @@
       </p>
       <p>タイトル:<%= @picture.title %></p>
       <p>コンテンツ:<%= @picture.content %></p>
+      <p>買った時の金額:<%= @picture.price %>円</p>
       <div class="field form-group">
         <%= form.submit "登録する" , class: 'btn btn-xs btn-primary' %>
       </div>

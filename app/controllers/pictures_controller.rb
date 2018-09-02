@@ -86,7 +86,7 @@ class PicturesController < ApplicationController
   end
 
   def picture_params
-    params.require(:picture).permit(:title, :user_id, :content, :image, :custom_image, :search_word, :q, :image_cache)
+    params.require(:picture).permit(:title, :user_id, :content, :image, :custom_image, :search_word, :q, :image_cache, :price)
   end
 
   def exchange_params

@@ -4,9 +4,9 @@
       <h1><%= @user.name %>のページ</h1>
       <p>メールアドレス: <%= @user.email %></p>
       <p><%= image_tag @user.image_url ,width:300 %></p>
-      <p><%= link_to "コンテンツへ移動",pictures_url, class:'btn btn-default'%></p>
+      <p><%= link_to "トップページへ移動",pictures_url, class:'btn btn-default'%></p>
     <%else%>
-      <p><%= link_to "コンテンツへ移動",pictures_url, class:'btn btn-default'%></p>
+      <p><%= link_to "トップページへ移動",pictures_url, class:'btn btn-default'%></p>
     <%end%>
   </div>
 </div>

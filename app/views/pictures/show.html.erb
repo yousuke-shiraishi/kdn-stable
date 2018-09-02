@@ -6,6 +6,7 @@
     <%= cl_image_tag @picture.image.file.filename ,:size => "300x420" %></p>
   <p><%= @picture.title %></p>
   <p><%= @picture.content %></p>
+  <p><%= @picture.price %>円</p>
   <% if @picture.user == current_user %>
       <%= link_to '編集', edit_picture_path(@picture) , class: "btn btn-xs btn-primary"%>
       |
