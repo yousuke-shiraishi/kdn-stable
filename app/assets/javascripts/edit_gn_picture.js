@@ -18,7 +18,7 @@ if (canvas && canvas.getContext) {
     canvas.addEventListener("click", first_click, false);
     canvas.addEventListener("click", fill_rect, false);
   };
-  const first_click = function(e) {
+  var first_click = function(e) {
     var rect = e.target.getBoundingClientRect();
     if (flg) {
       first_x = e.clientX - rect.left;
@@ -32,7 +32,7 @@ if (canvas && canvas.getContext) {
     }
   };
 
-  const fill_rect = function(){
+  var fill_rect = function(){
     let CSRF_TOKEN = $('meta[name = "csrf-token"]').attr('content');
     if (flg2 === true) {
       if (first_x > last_x) {
