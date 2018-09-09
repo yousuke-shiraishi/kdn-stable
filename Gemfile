@@ -68,3 +68,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'ransack'
 gem "jquery-fileupload-rails"
 gem 'cloudinary'
+gem 'jquery-turbolinks'
+gem 'bootstrap-sass'
+gem 'sprockets-rails'

@@ -16,4 +16,5 @@
 //= require toastr
 //= require jquery-fileupload
 //= require cloudinary
+//= require bootstrap
 //= require_tree .

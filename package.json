@@ -2,7 +2,7 @@
   "name": "instagram",
   "private": true,
   "dependencies": {
-    "bootstrap": "^3.3.7",
+    "bootstrap": "3",
     "cloudinary": "^1.11.0",
     "cloudinary-core": "^2.5.0",
     "http-server": "^0.11.1",
