@@ -52,12 +52,14 @@ flex-wrap: wrap;
 
 .box{
   margin: 0px 8px;
-  // width:23%;
-  // height:auto;
+  width: 100%;
+  height: auto;
 }
 
 .cover_box{
   display: block;
+  width: 100%;
+  height: auto;
   margin-top: 15px;
   margin-bottom: 30px;
   border-bottom-style: dashed;
